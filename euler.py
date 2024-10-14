@@ -17,14 +17,16 @@ alts = np.linspace(0, 30, n_alt)
 # breakpoint()
 # raise Exception("ここで実行を停止")
 lat_grid, alt_grid = np.meshgrid(lats, alts)
-print(lat_grid, alt_grid)
-sys.exit()
+# print(lat_grid, alt_grid)
 
 
 # 風速場の定義（ハドレー循環を簡略化）
 def wind_field(lat, alt):
     v_lat = np.sin(np.radians(lat)) * np.cos(np.pi * alt / 30)  # 緯度方向の風
+    # print(v_lat)
     v_alt = -np.cos(np.radians(lat)) * np.sin(np.pi * alt / 30)  # 高度方向の風
+    print(v_alt)
+    sys.exit()
     return v_lat, v_alt
 
 
